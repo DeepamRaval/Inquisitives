@@ -21,14 +21,14 @@ class RiskAssessment {
   Color get color {
     switch (riskLevel) {
       case RiskLevel.safe:
-        return AppConstants.safeColor;
+        return AppConstants.successColor;
       case RiskLevel.suspicious:
-        return AppConstants.suspiciousColor;
+        return AppConstants.warningColor; // Orange/Yellow
       case RiskLevel.dangerous:
-        return AppConstants.dangerousColor;
+        return AppConstants.errorColor; // Red
       case RiskLevel.unknown:
       default:
-        return AppConstants.neutralColor;
+        return AppConstants.textSecondary; // Grey
     }
   }
 }

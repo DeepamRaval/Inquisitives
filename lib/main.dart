@@ -15,23 +15,22 @@ class SafeScanApp extends StatelessWidget {
     return MaterialApp(
       title: AppConstants.appName,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.light,
+      themeMode: ThemeMode.dark,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: AppConstants.backgroundColor,
+        colorScheme: const ColorScheme.dark(
+          primary: AppConstants.primaryColor,
+          secondary: AppConstants.secondaryColor,
+          surface: AppConstants.surfaceColor,
+          error: AppConstants.errorColor,
         ),
+        textTheme: GoogleFonts.outfitTextTheme(ThemeData.dark().textTheme)
+            .apply(
+              bodyColor: AppConstants.textPrimary,
+              displayColor: AppConstants.textPrimary,
+            ),
         useMaterial3: true,
-        textTheme: GoogleFonts.interTextTheme(),
       ),
-      darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-          brightness: Brightness.dark,
-        ),
-        useMaterial3: true,
-        textTheme: GoogleFonts.interTextTheme(),
-      ),
-      themeMode: ThemeMode.system,
       home: const HomeScreen(),
     );
   }
