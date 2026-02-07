@@ -1,0 +1,12 @@
+[build]
+  command = "bash build.sh"
+  publish = "build/web"
+
+[build.environment]
+  # Use a build image with git pre-installed
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
